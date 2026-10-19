@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JACK AI</string>
+    <string name="accessibility_service_description">JACK AI সহকারীকে ব্যবহারকারীর নির্দেশে অ্যাপ পরিচালনা করতে সহায়তা করে। এটি শুধুমাত্র অনুমোদিত কমান্ডে কাজ করে।</string>
+    <string name="channel_name_assistant">JACK AI সহকারী সার্ভিস</string>
+    <string name="channel_desc_assistant">সহকারী সক্রিয় থাকা অবস্থায় ব্যাকগ্রাউন্ড নোটিফিকেশন প্রদর্শন করে</string>
+    <string name="notification_title_active">JACK AI সক্রিয় রয়েছে</string>
+    <string name="notification_content_active">ভয়েস সহকারী কমান্ডের জন্য প্রস্তুত</string>
+</resources>

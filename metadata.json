@@ -1,0 +1,6 @@
+{
+  "name": "JACK AI",
+  "description": "JARVIS-অনুপ্রাণিত বাংলা ব্যক্তিগত এআই সহকারী (Personal AI Assistant)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
