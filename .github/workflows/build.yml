@@ -19,12 +19,23 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    - name: Fix Missing Gradle Version Catalog
+      run: |
+        mkdir -p gradle
+        if [ ! -f "gradle/libs.versions.toml" ]; then
+          echo '[versions]' > gradle/libs.versions.toml
+          echo 'agp = "8.2.0"' >> gradle/libs.versions.toml
+          echo 'kotlin = "1.9.0"' >> gradle/libs.versions.toml
+          echo '[plugins]' >> gradle/libs.versions.toml
+          echo 'android-application = { id = "com.android.application", version.ref = "agp" }' >> gradle/libs.versions.toml
+          echo 'kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }' >> gradle/libs.versions.toml
+          echo 'kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }' >> gradle/libs.versions.toml
+        fi
+
     - name: Restructure Project Files
       run: |
         mkdir -p app/src/main/java/com/example/app
-        # Move Kotlin files to src directory if needed
         find . -maxdepth 1 -name "*.kt" -exec mv {} app/src/main/java/com/example/app/ \; 2>/dev/null || true
-        # Move AndroidManifest.xml if in root
         if [ -f "AndroidManifest.xml" ]; then
           mkdir -p app/src/main
           mv AndroidManifest.xml app/src/main/
